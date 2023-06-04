@@ -1,0 +1,15 @@
+﻿.c-navigation {
+  display: inline-flex;
+}
+.c-navigation a {
+  padding: var(--sl-spacing-medium) var(--sl-spacing-large);
+  color: #FFF;
+  text-decoration: none;
+  opacity: .7;
+  border-bottom: .2rem solid transparent;
+  transition: border .5s;
+}
+.c-navigation .router-link-active {
+  opacity: 1;
+  border-color: var(--sl-color-primary-800);
+}

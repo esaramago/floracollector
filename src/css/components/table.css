@@ -1,0 +1,17 @@
+﻿.c-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: .8rem;
+  table-layout: fixed;
+}
+.c-table thead {
+  border-bottom: 1px solid var(--sl-color-primary-800);
+}
+.c-table th {
+  box-sizing: border-box;
+  padding-bottom: 0.3rem;
+  text-align: left;
+}
+.c-table th, .c-table td {
+  padding: .2rem .8rem;
+}

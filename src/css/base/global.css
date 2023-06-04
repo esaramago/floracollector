@@ -1,0 +1,11 @@
+﻿body {
+  font-family: var(--sl-font-sans);
+  line-height: var(--sl-line-height-normal);
+  margin: 0;
+  background-color: var(--sl-color-primary-200);
+}
+main {
+  max-width: 100rem;
+  margin: auto;
+  padding: var(--sl-spacing-large);
+}
