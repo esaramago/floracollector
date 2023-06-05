@@ -1,7 +1,7 @@
 ﻿.c-table {
   border-collapse: collapse;
   width: 100%;
-  font-size: .8rem;
+  font-size: var(--sl-font-size-small);
   table-layout: fixed;
 }
 .c-table thead {
@@ -12,6 +12,8 @@
   padding-bottom: 0.3rem;
   text-align: left;
 }
-.c-table th, .c-table td {
+.c-table th,
+.c-table td {
   padding: .2rem .8rem;
+  line-height: var(--sl-line-height-dense);
 }

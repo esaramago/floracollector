@@ -1,24 +1,28 @@
 ﻿<template>
   <div class="c-stack">
     
-    <h1>Adicionar planta</h1>
+    <h1 class="c-heading" level="1">Adicionar planta</h1>
 
     <sl-card>
-      <sl-input
-        label="Espécie"
-        placeholder="Pesquise..."
-        @input="onSearchSpecies"
-        v-model="search.text"
-        help-text="Pesquise pela espécie da planta a adicionar"
-      ></sl-input>
 
-      <sl-menu v-show="search.result && search.result.length">
-        <sl-menu-item
-          v-for="species in search.result"
-          :value="species.id"
-          @click="onSelectSpecies(species.id)"
-        >{{species.scientific_name}}</sl-menu-item>
-      </sl-menu>
+      <div class="c-autocomplete">
+
+        <sl-input
+          label="Espécie"
+          placeholder="Pesquise..."
+          @input="onSearchSpecies"
+          v-model="search.text"
+          help-text="Pesquise pela espécie da planta a adicionar"
+        ></sl-input>
+        
+        <sl-menu v-show="search.result && search.result.length">
+          <sl-menu-item
+            v-for="species in search.result"
+            :value="species.id"
+            @click="onSelectSpecies(species.id)"
+          >{{species.scientific_name}}</sl-menu-item>
+        </sl-menu>
+      </div>
       
     </sl-card>
 

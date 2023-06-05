@@ -1,0 +1,14 @@
+﻿.c-autocomplete {
+  position: relative;
+  
+}
+.c-autocomplete sl-menu {
+  position: absolute;
+  width: 100%;
+  background-color: #FFF;
+  top: calc(var(--sl-input-height-medium) + 30px);
+  z-index: var(--sl-z-index-dropdown);
+  max-height: 15rem;
+  overflow: auto;
+  box-shadow: var(--sl-shadow-medium);
+}

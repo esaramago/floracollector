@@ -1,7 +1,10 @@
-@import 'base/variables.css';
+@import 'base/theme.css';
 @import 'base/global.css';
+
+@import 'components/autocomplete.css';
 @import 'components/card.css';
 @import 'components/header.css';
+@import 'components/headings.css';
 @import 'components/navigation.css';
 @import 'components/stack.css';
 @import 'components/table.css';
