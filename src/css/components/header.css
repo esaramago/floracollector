@@ -1,4 +1,8 @@
 ﻿.c-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 var(--sl-spacing-large);
   background-color: var(--sl-color-primary-500);
+  color: var(--sl-color-primary-50);
 }

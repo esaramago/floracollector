@@ -1,0 +1,10 @@
+﻿/* Colors */
+
+.u-color-primary-900 {
+  color: var(--sl-color-primary-900) !important;
+}
+
+/* Display */
+.u-display-block {
+  display: block !important;
+}

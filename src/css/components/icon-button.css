@@ -1,0 +1,45 @@
+﻿.c-icon-button {
+  position: relative;
+  padding: 0.4rem;
+  margin: -0.4rem;
+  color: var(--sl-color-neutral-700);
+  cursor: pointer;
+  transition: color .3s;
+}
+.c-icon-button[disabled] {
+  opacity: .2;
+  pointer-events: none;
+}
+.c-icon-button:hover {
+  color: var(--sl-color-primary-50);
+}
+.c-icon-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  background-color: var(--sl-color-primary-500);
+  width: 0rem;
+  height: 0rem;
+  border-radius: 50%;
+  opacity: 0;
+  transition:
+    opacity var(--sl-transition-medium),
+    width var(--sl-transition-medium),
+    height var(--sl-transition-medium),
+    left var(--sl-transition-medium),
+    top var(--sl-transition-medium);
+}
+.c-icon-button:hover::before {
+  top: -8%;
+  left: 0%;
+  width: 2rem;
+  height: 2rem;
+  opacity: 1;
+}
+.c-icon-button > svg {
+  position: relative;
+  z-index: 1;
+  height: 1.2rem;
+}

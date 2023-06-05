@@ -1,9 +1,14 @@
 ﻿.c-heading {
   margin: 0;
 }
-.c-heading[level=1] {
-  
+
+.c-heading[level="1"] {
+  color: var(--sl-color-primary-50);
 }
+a:has(.c-heading[level="1"]) {
+  text-decoration: none;
+}
+
 .c-heading[level=2] {
   
 }

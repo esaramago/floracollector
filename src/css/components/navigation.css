@@ -3,7 +3,7 @@
 }
 .c-navigation a {
   padding: var(--sl-spacing-medium) var(--sl-spacing-large);
-  color: #FFF;
+  color: var(--sl-color-primary-50);
   text-decoration: none;
   border-bottom: .2rem solid transparent;
   transition: border var(--sl-transition-medium);

@@ -1,9 +1,9 @@
 ﻿<template>
   <div class="c-stack">
     
-    <h1 class="c-heading" level="1">Adicionar planta</h1>
+    <h2 class="c-heading" level="2">Adicionar planta</h2>
 
-    <sl-card>
+    <sl-card class="c-stack">
 
       <div class="c-autocomplete">
 
@@ -24,17 +24,25 @@
         </sl-menu>
       </div>
       
+      <template v-if="plant.species">
+
+        <h3 class="c-heading" level="3">{{ plant.species.scientific_name }}</h3>
+
+      </template>
     </sl-card>
 
-    <sl-card v-if="plant.species">
-      <h2>{{ plant.species.scientific_name }}</h2>
-      <sl-button>Adicionar</sl-button>
+    <sl-card>
+      <h3 class="c-heading" level="3">Origem</h3>
+      
     </sl-card>
   </div>
 </template>
 <script setup>
 
   import { ref, reactive } from 'vue'
+
+  import FormSpecies from '../components/FormSpecies.vue'
+
   import '@shoelace-style/shoelace/dist/components/card/card.js'
   import '@shoelace-style/shoelace/dist/components/input/input.js'
   import '@shoelace-style/shoelace/dist/components/menu/menu.js'
