@@ -6,7 +6,6 @@
 </template>
 <script setup>
 
-  import '@shoelace-style/shoelace/dist/components/card/card.js'
   import FormSpecies from '../components/FormSpecies.vue'
 
 </script>

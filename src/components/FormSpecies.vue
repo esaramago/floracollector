@@ -30,6 +30,11 @@
   
     <sl-card>
       <h3 class="c-heading" level="3">Origem</h3>
+
+      <bs-row>
+        <bs-col col="3">acadca</bs-col>
+        <bs-col col="6">acadca</bs-col>
+      </bs-row>
     </sl-card>
   </div>
 </template>
@@ -37,52 +42,52 @@
 
 import { ref, reactive } from 'vue'
 
-  import '@shoelace-style/shoelace/dist/components/input/input.js'
-  import '@shoelace-style/shoelace/dist/components/menu/menu.js'
-  import '@shoelace-style/shoelace/dist/components/menu-item/menu-item.js'
-  import '@shoelace-style/shoelace/dist/components/button/button.js'
-  
+import '@shoelace-style/shoelace/dist/components/card/card.js'
+import '@shoelace-style/shoelace/dist/components/input/input.js'
+import '@shoelace-style/shoelace/dist/components/menu/menu.js'
+import '@shoelace-style/shoelace/dist/components/menu-item/menu-item.js'
+import '@shoelace-style/shoelace/dist/components/button/button.js'
 
-  import { TOKENS } from '@utils/constants'
-  import apiCall from '@utils/apiCall'
+import { TOKENS } from '@utils/constants'
+import apiCall from '@utils/apiCall'
 
-  const search = reactive({
-    timeout: null,
-    text: '',
-    result: null,
-  })
+const search = reactive({
+  timeout: null,
+  text: '',
+  result: null,
+})
 
-  function onSearchSpecies(event) {
+function onSearchSpecies(event) {
 
-    if (search.text) {
-      clearTimeout(search.timeout)
-      search.timeout = setTimeout(() => {
-        apiCall({
-          url: `/trefle/species/search?token=${TOKENS.treffle}&q=${search.text}`,
-          success: response => {
-            const acceptedSpecies = response.data.data.filter(data => data.status === 'accepted') // remove unaccepted status species
-            search.result = acceptedSpecies
-          },
-          error: error => {
-            
-          },
-        })
-        
-      }, 500)
-    } else {
-      search.result = null
-    }
-  }
-
-  const plant = reactive({
-    species: null
-  })
-  function onSelectSpecies(speciesId) {
-
-    const species = search.result.find(spec => spec.id === speciesId)
-    plant.species = species
-
-    search.text = ''
+  if (search.text) {
+    clearTimeout(search.timeout)
+    search.timeout = setTimeout(() => {
+      apiCall({
+        url: `/trefle/species/search?token=${TOKENS.treffle}&q=${search.text}`,
+        success: response => {
+          const acceptedSpecies = response.data.data.filter(data => data.status === 'accepted') // remove unaccepted status species
+          search.result = acceptedSpecies
+        },
+        error: error => {
+          
+        },
+      })
+      
+    }, 500)
+  } else {
     search.result = null
   }
+}
+
+const plant = reactive({
+  species: null
+})
+function onSelectSpecies(speciesId) {
+
+  const species = search.result.find(spec => spec.id === speciesId)
+  plant.species = species
+
+  search.text = ''
+  search.result = null
+}
 </script>
