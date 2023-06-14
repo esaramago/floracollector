@@ -1,7 +1,7 @@
 .c-icon-button {
   position: relative;
-  padding: 0.4rem;
-  margin: -0.4rem;
+  padding: 0.6rem;
+  margin: -0.6rem;
   color: var(--sl-color-neutral-700);
   cursor: pointer;
   transition: color .3s;
@@ -34,12 +34,12 @@
 .c-icon-button:hover::before {
   top: -8%;
   left: 0%;
-  width: 2rem;
-  height: 2rem;
+  width: 3.2rem;
+  height: 3.2rem;
   opacity: 1;
 }
 .c-icon-button > svg {
   position: relative;
   z-index: 1;
-  height: 1.2rem;
+  height: 1.9rem;
 }
