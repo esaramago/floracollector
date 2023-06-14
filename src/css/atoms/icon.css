@@ -1,19 +1,26 @@
-.c-icon-button {
+﻿sl-icon {
   position: relative;
-  padding: 0.6rem;
-  margin: -0.6rem;
-  color: var(--sl-color-neutral-700);
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: .4rem .7rem;
+  margin: -.4rem -.7rem;
+  vertical-align: middle;
+}
+
+
+/* Hoverable */
+sl-icon[type="button"] {
   cursor: pointer;
   transition: color .3s;
 }
-.c-icon-button[disabled] {
+sl-icon[type="button"][disabled] {
   opacity: .2;
   pointer-events: none;
 }
-.c-icon-button:hover {
+sl-icon[type="button"]:hover {
   color: var(--sl-color-primary-50);
 }
-.c-icon-button::before {
+sl-icon[type="button"]::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -31,15 +38,14 @@
     left var(--sl-transition-medium),
     top var(--sl-transition-medium);
 }
-.c-icon-button:hover::before {
+sl-icon[type="button"]:hover::before {
   top: -8%;
   left: 0%;
   width: 3.2rem;
   height: 3.2rem;
   opacity: 1;
 }
-.c-icon-button > svg {
+sl-icon[type="button"]::part(svg) {
   position: relative;
   z-index: 1;
-  height: 1.9rem;
 }

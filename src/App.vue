@@ -2,17 +2,17 @@
   <header class="c-header">
     <RouterLink to="/">
       <h1 class="c-heading" level="1">
-        <font-awesome-icon icon="leaf" class="u-color-primary-900"></font-awesome-icon>
+        <sl-icon name="leaf" class="u-color-primary-900"></sl-icon>
         Flora Index
       </h1>
     </RouterLink>
     <nav class="c-navigation">
       <RouterLink to="/">
-        <font-awesome-icon icon="table"></font-awesome-icon>
+        <sl-icon name="table"></sl-icon>
         Coleção
       </RouterLink>
       <RouterLink to="/create">
-        <font-awesome-icon icon="plus"></font-awesome-icon>
+        <sl-icon name="plus"></sl-icon>
         Adicionar planta
       </RouterLink>
     </nav>

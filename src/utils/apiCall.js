@@ -1,14 +1,18 @@
 ﻿import axios from 'axios'
+import { TOKENS } from '@utils/constants'
 
 export default options => {
   return axios({
     method: options.method,
     headers: {
       'Content-Type': 'application/json;charset=UTF-8',
-      'Access-Control-Allow-Origin': '*' // Could work and fix the previous problem, but not in all APIs
+      'Access-Control-Allow-Origin': '*'
     },
     url: options.url,
-    data: options.data,
+    params: {
+      token: TOKENS.treffle,
+      ...options.data,
+    }
   })
   .then(response => {
     if (options.success) {

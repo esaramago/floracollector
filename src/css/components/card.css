@@ -3,3 +3,27 @@ sl-card {
   border-radius: 2rem;
   background-color: var(--sl-color-primary-50);
 }
+sl-card [slot="image"] {
+  
+}
+sl-card [part="body"] {
+  background-color: red;
+}
+
+sl-card[direction="landscape"]::part(base) {
+  display: inline-flex;
+  flex-direction: row;
+}
+sl-card[direction="landscape"]::part(image) {
+  position: relative;
+  max-height: 30rem;
+  width: 20rem;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--border-radius);
+}
+sl-card [slot="image"]{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

@@ -14,15 +14,7 @@ import '/node_modules/bootstrap-grid-webcomponents/dist/bootstrap-grid-webcompon
 // CSS
 import './css/main.scss'
 
-// Icons
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faLeaf, faPlus, faTable } from '@fortawesome/free-solid-svg-icons'
-library.add(faPlus, faTable, faLeaf)
-
-
 createApp(App)
   .use(createPinia())
   .use(router)
-  .component('font-awesome-icon', FontAwesomeIcon)
   .mount('#app')

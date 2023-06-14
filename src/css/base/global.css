@@ -7,9 +7,14 @@ body {
   line-height: var(--sl-line-height-normal);
   margin: 0;
   background-color: var(--sl-color-primary-200);
+  color: var(--sl-color-neutral-700);
 }
 main {
   max-width: 100rem;
   margin: auto;
   padding: var(--sl-spacing-large);
+}
+img {
+  max-width: 100%;
+  display: block;
 }

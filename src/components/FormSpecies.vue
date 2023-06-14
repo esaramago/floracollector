@@ -2,6 +2,8 @@
   <div class="c-stack">
 
     <sl-card class="c-stack">
+      <h3 class="c-heading" level="3">Selecione a espécie</h3>
+
       <div class="c-autocomplete">
         
         <sl-input
@@ -20,22 +22,34 @@
           >{{species.scientific_name}}</sl-menu-item>
         </sl-menu>
       </div>
-      
-      <template v-if="plant.species">
-        
-        <h3 class="c-heading" level="3">{{ plant.species.scientific_name }}</h3>
-        
-      </template>
-    </sl-card>
-  
-    <sl-card>
-      <h3 class="c-heading" level="3">Origem</h3>
 
-      <bs-row>
-        <bs-col col="3">acadca</bs-col>
-        <bs-col col="6">acadca</bs-col>
-      </bs-row>
     </sl-card>
+    
+    <template v-if="plant.species">
+
+      <hr>
+
+      <sl-card direction="landscape">
+        <img
+          slot="image"
+          :src="plant.species.image_url"
+          :alt="plant.species.scientific_name"
+        />
+          <h3 class="c-heading" level="3">{{ plant.species.scientific_name }}</h3>
+          Nome comum: <strong>{{ plant.species.common_name }}</strong><br>
+          Família: <strong>{{ plant.species.family }}</strong>
+      </sl-card>
+
+      <sl-card>
+        <h3 class="c-heading" level="3">Origem</h3>
+
+        <bs-row>
+          <bs-col col="3">acadca</bs-col>
+          <bs-col col="6">acadca</bs-col>
+        </bs-row>
+      </sl-card>
+    </template>
+
   </div>
 </template>
 <script setup>
@@ -48,7 +62,6 @@ import '@shoelace-style/shoelace/dist/components/menu/menu.js'
 import '@shoelace-style/shoelace/dist/components/menu-item/menu-item.js'
 import '@shoelace-style/shoelace/dist/components/button/button.js'
 
-import { TOKENS } from '@utils/constants'
 import apiCall from '@utils/apiCall'
 
 const search = reactive({
@@ -63,7 +76,10 @@ function onSearchSpecies(event) {
     clearTimeout(search.timeout)
     search.timeout = setTimeout(() => {
       apiCall({
-        url: `/trefle/species/search?token=${TOKENS.treffle}&q=${search.text}`,
+        url: `/trefle/species/search`,
+        data: {
+          q: search.text
+        },
         success: response => {
           const acceptedSpecies = response.data.data.filter(data => data.status === 'accepted') // remove unaccepted status species
           search.result = acceptedSpecies
@@ -91,3 +107,7 @@ function onSelectSpecies(speciesId) {
   search.result = null
 }
 </script>
+
+<style scoped>
+
+</style>

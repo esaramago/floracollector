@@ -21,8 +21,8 @@
             <td>38.727263, -9.135921</td>
             <td>11/12/2022</td>
             <td>
-              <RouterLink to="/create" class="c-icon-button">
-                <font-awesome-icon icon="table"></font-awesome-icon>
+              <RouterLink to="/create">
+                <sl-icon type="button" name="pencil"></sl-icon>
               </RouterLink>
             </td>
           </tr>
@@ -31,9 +31,9 @@
     </sl-card>
   </div>
 </template>
-<script setup>
-import { ref } from 'vue'
+<script setup lang="ts">
 
 import '@shoelace-style/shoelace/dist/components/card/card.js'
+import '@shoelace-style/shoelace/dist/components/icon/icon.js'
 
 </script>

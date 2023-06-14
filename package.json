@@ -16,9 +16,6 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@fortawesome/free-solid-svg-icons": "^6.4.0",
-    "@fortawesome/vue-fontawesome": "^3.0.3",
     "@shoelace-style/shoelace": "^2.4.0",
     "axios": "^1.4.0",
     "bootstrap-grid-webcomponents": "^0.4.3",
